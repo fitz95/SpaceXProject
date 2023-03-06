@@ -1,13 +1,13 @@
 import React, { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { Routes, Route, Outlet } from 'react-router-dom';
 
 import Navbar from './components/Navbar';
 import { fetchMissions } from './redux/missionsSlice';
+import Profile from './components/Profile';
 
 function App() {
   const dispatch = useDispatch();
-  const missions = useSelector((state) => state.missions);
 
   useEffect(() => {
     dispatch(fetchMissions());
@@ -19,7 +19,7 @@ function App() {
       <Routes>
         <Route path="/" element={<div>Home</div>} />
         <Route path="/missions" element={<div>Mission</div>} />
-        <Route path="/my-profile" element={<div>My Profile</div>} />
+        <Route path="/my-profile" element={<Profile />} />
       </Routes>
       <Outlet />
     </>

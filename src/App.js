@@ -4,6 +4,7 @@ import { Routes, Route, Outlet } from 'react-router-dom';
 
 import Navbar from './components/Navbar';
 import { fetchMissions } from './redux/missionsSlice';
+import { fetchRockets } from './redux/rocketsSlice';
 import Profile from './components/Profile';
 
 function App() {
@@ -11,6 +12,10 @@ function App() {
 
   useEffect(() => {
     dispatch(fetchMissions());
+  }, [dispatch]);
+
+  useEffect(() => {
+    dispatch(fetchRockets());
   }, [dispatch]);
 
   return (

@@ -5,6 +5,7 @@ import { Routes, Route, Outlet } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import { fetchMissions } from './redux/missionsSlice';
 import Profile from './components/Profile';
+import Missions from './pages/Missions';
 
 function App() {
   const dispatch = useDispatch();
@@ -18,7 +19,7 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<div>Home</div>} />
-        <Route path="/missions" element={<div>Mission</div>} />
+        <Route path="/missions" element={<Missions />} />
         <Route path="/my-profile" element={<Profile />} />
       </Routes>
       <Outlet />

@@ -5,7 +5,12 @@ const url = 'https://api.spacexdata.com/v3/missions';
 export const fetchMissions = createAsyncThunk('missions/fetch', async () => {
   const res = await fetch(url);
   const data = await res.json();
-  return data;
+  return data.map((e) => ({
+    mission_id: e.mission_id,
+    mission_name: e.mission_name,
+    description: e.description,
+    reserved: false,
+  }));
 });
 
 const missionsSlice = createSlice({
@@ -14,7 +19,20 @@ const missionsSlice = createSlice({
     list: [],
     isFetching: false,
   },
-  reducers: {},
+  reducers: {
+    missionUpdated: (state, action) => ({
+      ...state,
+      list: state.list.map((mission) => {
+        if (mission.mission_id === action.payload) {
+          return {
+            ...mission,
+            reserved: !mission.reserved,
+          };
+        }
+        return mission;
+      }),
+    }),
+  },
   extraReducers: (builder) => {
     builder
       .addCase(fetchMissions.fulfilled, (state, action) => ({
@@ -28,6 +46,8 @@ const missionsSlice = createSlice({
       }));
   },
 });
+
+export const { missionUpdated } = missionsSlice.actions;
 
 export default missionsSlice.reducer;
 

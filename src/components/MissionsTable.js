@@ -1,14 +1,17 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 import styles from 'src/css/MissionsTable.module.css';
-import { selectMissions } from 'src/redux/missionsSlice';
+import { missionUpdated, selectMissions } from 'src/redux/missionsSlice';
 
 import MissionsLabel from './MissionsLabel';
 import MissionsButton from './MissionsButton';
 
 function MissionsTable() {
   const missions = useSelector(selectMissions);
+  const dispatch = useDispatch();
+
+  console.log(missions[0]);
 
   return (
     <table className={styles.table}>
@@ -37,7 +40,10 @@ function MissionsTable() {
               <MissionsLabel isReserved={!!mission.reserved} />
             </td>
             <td className={styles.center}>
-              <MissionsButton isReserved={!!mission.reserved} />
+              <MissionsButton
+                isReserved={!!mission.reserved}
+                onClick={() => dispatch(missionUpdated(mission.mission_id))}
+              />
             </td>
           </tr>
         ))}

@@ -1,5 +1,6 @@
 import { Routes, Route, Outlet } from 'react-router-dom';
 import Navbar from './components/Navbar';
+import Profile from './components/Profile';
 
 function App() {
   return (
@@ -8,7 +9,7 @@ function App() {
       <Routes>
         <Route path="/" element={<div>Home</div>} />
         <Route path="/missions" element={<div>Mission</div>} />
-        <Route path="/my-profile" element={<div>My Profile</div>} />
+        <Route path="/my-profile" element={<Profile />} />
       </Routes>
       <Outlet />
     </>

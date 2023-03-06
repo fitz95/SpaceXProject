@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import styles from 'src/css/MissionsLabel.module.css';
 
-function MissionsLabel({ isReserved }) {
+function MissionsBadge({ isReserved }) {
   return (
     <div
       className={styles.label}
@@ -14,8 +14,8 @@ function MissionsLabel({ isReserved }) {
   );
 }
 
-MissionsLabel.propTypes = {
+MissionsBadge.propTypes = {
   isReserved: PropTypes.bool.isRequired,
 };
 
-export default MissionsLabel;
+export default MissionsBadge;

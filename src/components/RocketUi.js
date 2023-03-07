@@ -1,10 +1,20 @@
 import React from 'react';
+import { useDispatch } from 'react-redux';
+import { reserveRocket, cancelReserve } from 'src/redux/rocketsSlice';
+import PropTypes from 'prop-types';
 import styles from '../css/RocketUi.module.css';
 
 function RocketUi({
-  // eslint-disable-next-line react/prop-types
-  name, desc, picture, reserved,
+  name, desc, picture, reserved, id,
 }) {
+  const dispatch = useDispatch();
+  const handleReserve = () => {
+    dispatch(reserveRocket(id));
+  };
+  const handleCancel = () => {
+    dispatch(cancelReserve(id));
+  };
+
   return (
     <div className={styles.rocketflex}>
       <div className={styles.imgdiv}>
@@ -14,7 +24,7 @@ function RocketUi({
         <div>
           <h1 className={styles.name}>{name}</h1>
           <p className={styles.desc}>{desc}</p>
-          <button type="button" className={styles.reservebtn}>
+          <button type="button" className={styles.reservebtn} onClick={handleReserve}>
             Reserve Rocket
           </button>
         </div>
@@ -26,7 +36,7 @@ function RocketUi({
             <span className={styles.reservespan}>reserved</span>
             {desc}
           </p>
-          <button type="button" className={styles.cancelbtn}>
+          <button type="button" className={styles.cancelbtn} onClick={handleCancel}>
             Cancel Reservation
           </button>
         </div>
@@ -34,5 +44,11 @@ function RocketUi({
     </div>
   );
 }
-
+RocketUi.propTypes = {
+  name: PropTypes.string.isRequired,
+  desc: PropTypes.string.isRequired,
+  id: PropTypes.string.isRequired,
+  picture: PropTypes.string.isRequired,
+  reserved: PropTypes.bool.isRequired,
+};
 export default RocketUi;

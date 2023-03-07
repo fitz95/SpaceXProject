@@ -1,0 +1,53 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Navbar renders correctly 1`] = `
+<header
+  className="header"
+>
+  <a
+    aria-current="page"
+    className="icondiv active"
+    href="/"
+    onClick={[Function]}
+  >
+    <img
+      alt="planet"
+      className="icon"
+      src="logo.png"
+    />
+    <span
+      className="navspan"
+    >
+      Space Travelers' Hub
+    </span>
+  </a>
+  <nav>
+    <ul
+      className="navItems"
+    >
+      <a
+        aria-current="page"
+        className="link active"
+        href="/"
+        onClick={[Function]}
+      >
+        Rockets
+      </a>
+      <a
+        className="link"
+        href="/missions"
+        onClick={[Function]}
+      >
+        Missions
+      </a>
+      <a
+        className="link"
+        href="/my-profile"
+        onClick={[Function]}
+      >
+        My Profile
+      </a>
+    </ul>
+  </nav>
+</header>
+`;

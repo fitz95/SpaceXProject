@@ -1,7 +1,24 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import cn from 'classnames';
+
 import styles from 'src/css/Navbar.module.css';
 import logo from '../image/logo.png';
+
+const links = [
+  {
+    to: '/',
+    text: 'Rockets',
+  },
+  {
+    to: '/missions',
+    text: 'Missions',
+  },
+  {
+    to: '/my-profile',
+    text: 'My Profile',
+  },
+];
 
 function Navbar() {
   return (
@@ -12,31 +29,15 @@ function Navbar() {
       </NavLink>
       <nav>
         <ul className={styles.navItems}>
-          <li>
+          {links.map((e) => (
             <NavLink
-              to="/"
-              className={({ isActive }) => (isActive ? styles.active : '')}
+              key={e.to}
+              to={e.to}
+              className={({ isActive }) => cn(styles.link, isActive && styles.active)}
             >
-              Rockets
+              {e.text}
             </NavLink>
-          </li>
-          <li>
-            <NavLink
-              to="/missions"
-              className={({ isActive }) => (isActive ? styles.active : '')}
-            >
-              Missions
-            </NavLink>
-          </li>
-          <hr />
-          <li>
-            <NavLink
-              to="/my-profile"
-              className={({ isActive }) => (isActive ? styles.active : '')}
-            >
-              My Profile
-            </NavLink>
-          </li>
+          ))}
         </ul>
       </nav>
     </header>

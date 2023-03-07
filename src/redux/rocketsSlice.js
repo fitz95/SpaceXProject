@@ -14,14 +14,33 @@ const rocketsSlice = createSlice({
     list: [],
     isFetching: false,
   },
-  reducers: {},
+  reducers: {
+    reserveRocket: (state, action) => {
+      state.list.map((element) => {
+        if (element.rocket_id === action.payload) {
+          element.reserved = true;
+          return element;
+        }
+        return { ...element, reserved: true };
+      });
+    },
+    canceReserve: (state, action) => {
+      state.list.map((element) => {
+        if (element.rocket_id === action.payload) {
+          element.reserved = false;
+          return element;
+        }
+        return { ...element, reserved: false };
+      });
+    },
+  },
   extraReducers: (builder) => {
     builder
-      .addCase(fetchRockets.fulfilled, (state, action) => ({
-        ...state,
-        isFetching: false,
-        list: action.payload,
-      }))
+      .addCase(fetchRockets.fulfilled, (state, action) => {
+        const data = action.payload.map((x) => ({ ...x, reserved: false }));
+        state = { ...state, isFetching: false, list: data };
+        return state;
+      })
       .addCase(fetchRockets.pending, (state) => ({
         ...state,
         isFetching: true,

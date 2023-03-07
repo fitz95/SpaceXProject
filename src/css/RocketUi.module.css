@@ -1,7 +1,7 @@
 .rocketflex {
-    display: flex;
-    column-gap: 30px;
-    padding: 1.5rem 1.5rem 1.5rem 1.5rem;
+  display: flex;
+  column-gap: 30px;
+  padding: 1.5rem 1.5rem 1.5rem 1.5rem;
 }
 
 .imgdiv {
@@ -9,18 +9,18 @@
 }
 
 .img {
-    height: 100%;
-    width: 25rem;
+  height: 100%;
+  width: 25rem;
 }
 
 .name {
-    font-family: 'Roboto Slab', serif;
-    font-size: 1.675rem;
-    font-weight: 700;
-    letter-spacing: normal;
-    color: black;
-    opacity: 0.8;
-  }
+  font-family: 'Roboto Slab', serif;
+  font-size: 1.675rem;
+  font-weight: 700;
+  letter-spacing: normal;
+  color: black;
+  opacity: 0.8;
+}
 
 .desc {
   opacity: 0.6;
@@ -29,10 +29,10 @@
   font-weight: 300;
   width: 80%;
   margin-top: 0.2rem;
-} 
+}
 
 .reservespan {
-  background-color: #18A2B8;
+  background-color: #18a2b8;
   color: white;
   padding: 0.2rem 0.4rem 0.2rem 0.4rem;
   border-radius: 0.5rem;
@@ -46,13 +46,13 @@
   border: 0.01rem solid black;
   border-radius: 3px;
   margin-top: 1.5rem;
-  color: #6D757D;
+  color: #6d757d;
 }
 
 .reservebtn {
   font-size: 1.1rem;
   padding: 0.8rem 1rem 0.8rem 1rem;
-  background-color: #007BFF;
+  background-color: #007bff;
   border: none;
   border-radius: 3px;
   margin-top: 1.5rem;

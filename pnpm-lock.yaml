@@ -16,6 +16,7 @@ specifiers:
   eslint-plugin-jsx-a11y: 6.x
   eslint-plugin-react: 7.x
   eslint-plugin-react-hooks: 4.x
+  identity-obj-proxy: ^3.0.0
   prop-types: ^15.8.1
   react: ^18.2.0
   react-dom: ^18.2.0
@@ -56,6 +57,7 @@ devDependencies:
   eslint-plugin-jsx-a11y: 6.7.1_eslint@7.32.0
   eslint-plugin-react: 7.32.2_eslint@7.32.0
   eslint-plugin-react-hooks: 4.6.0_eslint@7.32.0
+  identity-obj-proxy: 3.0.0
   react-test-renderer: 18.2.0_react@18.2.0
   stylelint: 13.13.1
   stylelint-config-standard: 21.0.0_stylelint@13.13.1
@@ -5448,7 +5450,6 @@ packages:
 
   /harmony-reflect/1.6.2:
     resolution: {integrity: sha512-HIp/n38R9kQjDEziXyDTuW3vvoxxyxjxFzXLrBr18uB47GnSt+G9D29fqrpM5ZkspMcPICud3XsBJQ4Y2URg8g==}
-    dev: false
 
   /has-bigints/1.0.2:
     resolution: {integrity: sha512-tSvCKtBr9lkF0Ex0aQiP9N+OpV4zi2r/Nee5VkRDbaqv35RLYMzbwQfFSZZH0kR+Rd6302UJZ2p/bJCEoR3VoQ==}
@@ -5707,7 +5708,6 @@ packages:
     engines: {node: '>=4'}
     dependencies:
       harmony-reflect: 1.6.2
-    dev: false
 
   /ignore/4.0.6:
     resolution: {integrity: sha512-cyFDKrqc/YdcWFniJhzI42+AzS+gNwmUzOSFcRCQYwySuBBBy/KjuxWLZ/FHEH6Moq1NizMOBWyTcv8O4OZIMg==}

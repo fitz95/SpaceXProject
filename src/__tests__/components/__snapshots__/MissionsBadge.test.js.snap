@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MissionsBadge renders correctly for not reserved state 1`] = `
+<div
+  className="label"
+  style={
+    Object {
+      "backgroundColor": "#6d757d",
+    }
+  }
+>
+  NOT A MEMBER
+</div>
+`;
+
+exports[`MissionsBadge renders correctly for reserved state 1`] = `
+<div
+  className="label"
+  style={
+    Object {
+      "backgroundColor": "#18a2b8",
+    }
+  }
+>
+  Active Member
+</div>
+`;

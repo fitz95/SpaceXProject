@@ -1,6 +1,6 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import RocketUi from './RocketUi';
+import RocketUi from '../components/RocketUi';
 
 function RocketLists() {
   const rockets = useSelector((store) => store.rockets.list);
@@ -13,7 +13,7 @@ function RocketLists() {
           name={rocket.rocket_name}
           desc={rocket.description}
           reserved={rocket.reserved}
-          picture={rocket.flickr_images}
+          picture={rocket.flickr_images[0]}
         />
       ))}
     </div>

@@ -18,7 +18,7 @@ function RocketUi({
   return (
     <div className={styles.rocketflex}>
       <div className={styles.imgdiv}>
-        <img src={picture} alt="Rocket" className={styles.img} />
+        <img src={picture} alt={name} className={styles.img} />
       </div>
       {!reserved && (
         <div>

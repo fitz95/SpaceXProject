@@ -4,8 +4,8 @@ import { Routes, Route, Outlet } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import { fetchMissions } from './redux/missionsSlice';
 import { fetchRockets } from './redux/rocketsSlice';
-import Profile from './components/Profile';
-import RocketLists from './components/RocketLists';
+import Profile from './pages/Profile';
+import RocketLists from './pages/RocketLists';
 import Missions from './pages/Missions';
 
 function App() {

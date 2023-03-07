@@ -50,5 +50,5 @@ const rocketsSlice = createSlice({
 
 export const { reserveRocket, cancelReserve } = rocketsSlice.actions;
 export default rocketsSlice.reducer;
-
+export const selectReservedRockets = (state) => state.rockets.list.filter((e) => e.reserved);
 export const selectRockets = (state) => state.rockets.list;

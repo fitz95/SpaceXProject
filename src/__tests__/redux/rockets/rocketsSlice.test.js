@@ -3,7 +3,7 @@ import reducer, {
   fetchRockets,
   reserveRocket,
   cancelReserve,
-} from 'src/redux/rocketsSlice';
+} from 'src/redux/rockets/rocketsSlice';
 
 const rocket = {
   rocket_id: '1',

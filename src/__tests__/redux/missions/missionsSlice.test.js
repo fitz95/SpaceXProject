@@ -2,7 +2,7 @@ import { configureStore } from '@reduxjs/toolkit';
 import reducer, {
   fetchMissions,
   missionUpdated,
-} from 'src/redux/missionsSlice';
+} from 'src/redux/missions/missionsSlice';
 
 const mission = {
   mission_id: '1',

@@ -2,8 +2,8 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 
 import styles from 'src/css/Profile.module.css';
-import { selectReservedMissions } from 'src/redux/missionsSlice';
-import { selectReservedRockets } from 'src/redux/rocketsSlice';
+import { selectReservedMissions } from 'src/redux/missions/missionsSlice';
+import { selectReservedRockets } from 'src/redux/rockets/rocketsSlice';
 
 function Profile() {
   const reservedMissions = useSelector(selectReservedMissions);

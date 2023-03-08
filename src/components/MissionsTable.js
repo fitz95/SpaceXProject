@@ -2,7 +2,7 @@ import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 import styles from 'src/css/MissionsTable.module.css';
-import { missionUpdated, selectMissions } from 'src/redux/missionsSlice';
+import { missionUpdated, selectMissions } from 'src/redux/missions/missionsSlice';
 
 import MissionsBadge from './MissionsBadge';
 import MissionsButton from './MissionsButton';

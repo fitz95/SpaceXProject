@@ -1,26 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import { Routes, Route, Outlet } from 'react-router-dom';
+import Navbar from './components/Navbar';
+import { fetchMissions } from './redux/missions/missionsSlice';
+import { fetchRockets } from './redux/rockets/rocketsSlice';
+import Profile from './pages/Profile';
+import RocketLists from './pages/RocketLists';
+import Missions from './pages/Missions';
 
 function App() {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(fetchMissions());
+    dispatch(fetchRockets());
+  }, [dispatch]);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit
-          <code> src/App.js </code>
-          and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<RocketLists />} />
+        <Route path="/missions" element={<Missions />} />
+        <Route path="/my-profile" element={<Profile />} />
+      </Routes>
+      <Outlet />
+    </>
   );
 }
 

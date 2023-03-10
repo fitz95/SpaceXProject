@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MissionsButton renders correctly for not reserved state 1`] = `
+<button
+  className="button joinMission"
+  onClick={[Function]}
+  type="button"
+>
+  Join Mission
+</button>
+`;
+
+exports[`MissionsButton renders correctly for reserved state 1`] = `
+<button
+  className="button leaveMission"
+  onClick={[Function]}
+  type="button"
+>
+  Leave Mission
+</button>
+`;
